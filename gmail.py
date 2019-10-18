@@ -11,7 +11,7 @@ def send_mail(adresse):
 
     server.sendmail(' binancenewsmonitor@gmail.com ', adresse,
     "Subject: BINANCE NEWS.")
-    smtpObj.quit()
+    server.quit()
             
 
 

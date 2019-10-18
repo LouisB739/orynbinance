@@ -3,28 +3,34 @@ import urllib.request
 import time
 from bs4 import BeautifulSoup
 import smtplib
+import gmail
 
-url = 'https://www.binance.com/en/support/sections/115000106672'
+def binance_monitor():
 
-while True:
-
-
-    response = requests.get(url)
-    soup = BeautifulSoup(response.text, 'html.parser')
-    news = soup.select(".article-list-link")[0]
-    
-
-  
-
-    time.sleep(3)
+    url = 'https://www.binance.com/en/support/sections/115000106672'
 
     response2 = requests.get(url)
     soup2 = BeautifulSoup(response2.text, 'html.parser')
-    news2 = soup2.select(".article-list-link")[0]
-    
+    news2 = soup2.text
+        
+    while True:
 
-    if news == news2:
-        print("....")
-    else:
-        print("updated")
+        response = requests.get(url)
+        soup = BeautifulSoup(response.text, 'html.parser')
+        news = soup.text
+        time.sleep(5)
+        
+        if news == news2:
+            print("....")
+        else:
+            gmail.send_mail("v.dalet@gmail.com")
+            response2 = requests.get(url)
+            soup2 = BeautifulSoup(response2.text, 'html.parser')
+            news2 = soup2.text
+
+
+
+
+
+
 

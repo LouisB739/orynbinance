@@ -1,5 +1,4 @@
 import requests
-import urllib.request
 import time
 from bs4 import BeautifulSoup
 import smtplib
@@ -18,12 +17,13 @@ def binance_monitor():
         response = requests.get(url)
         soup = BeautifulSoup(response.text, 'html.parser')
         news = soup.text
-        time.sleep(5)
+        time.sleep(15)
         
         if news == news2:
             print("....")
         else:
             gmail.send_mail("v.dalet@gmail.com")
+            gmail.send_mail("l2525b@gmail.com")
             response2 = requests.get(url)
             soup2 = BeautifulSoup(response2.text, 'html.parser')
             news2 = soup2.text

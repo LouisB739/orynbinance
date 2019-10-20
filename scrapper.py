@@ -24,8 +24,9 @@ def binance_monitor():
         if news == news2:
             print("....")
         else:
+            message = news.text
             gmail.send_mail("v.dalet@gmail.com","l2525b@gmail.com")
-            whatsapp.send_text()
+            whatsapp.send_text(message)
             response2 = requests.get(url)
             soup2 = BeautifulSoup(response2.text, 'html.parser')
             news2 = soup2.find("li", class_="article-list-item")

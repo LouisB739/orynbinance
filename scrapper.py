@@ -39,7 +39,7 @@ def binance_monitor():
         else:
                 message = diff(news_title_array2,news_title_array)
                 gmail.send_mail(" v.dalet@gmail.com","l2525b@gmail.com")
-                whatsapp.send_text(string(message))
+                whatsapp.send_text(str(message))
                 response2 = requests.get(url)
                 news_title_array = []
                 soup2 = BeautifulSoup(response2.text, 'html.parser')

@@ -14,3 +14,5 @@ def send_text(message):
     client.messages.create(body=message,
                         from_=from_whatsapp_number,
                         to=to_whatsapp_number)
+
+

@@ -16,3 +16,6 @@ def send_text(message):
                         to=to_whatsapp_number)
 
 
+
+
+send_text('SALUT')

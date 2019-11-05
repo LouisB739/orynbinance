@@ -4,11 +4,12 @@ import hmac
 import hashlib
 import requests
 from urllib.parse import urljoin, urlencode
+load_dotenv()
 
-API_KEY = 'Ia4YgA3lpF1Y97XdwaJnOov1xUmpqYl0tLiBDMh2zalIXiY3YD1qpUJT5R0KW5gs'
+
 SECRET_KEY = 'DG7lgFt7IOdBboatACSbTqB4ip5cjqeaFpKpAkdSneYep64jYVngx4dJu9FbQSwV'
 BASE_URL = 'https://api.binance.com'
-
+API_KEY = os.getenv('BINANCE_API_KEY')
 headers = {
     'X-MBX-APIKEY': API_KEY
 }
